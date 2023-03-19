@@ -1,0 +1,54 @@
+progjeto type aula nwl
+instalacao de docker node
+//O arquivo Dockerfile tem as instruções para gerar uma imagem.
+
+levantar o docker windows
+--docker ps (para listar os containers)
+-----------------------------------------------------------------------------------------------------------
+//O comando docker build gera as imagens. Os containers são as "imagens em execução".
+--docker build -t rentx . (buildar)
+------------------------------------------------------------------------------------------------------------
+//RODAR  A APLICACAO SEMELHANTE AO YARN DEV
+--docker run -p 3333:3333 rentx (rodar)
+
+// Docker compose (orquestrador de containers)
+ -- docker-compose --version (saber a versao)
+----------------------------------------------------------------------------------------------------
+ (*)docler-compose.yml
+ cirar o documento com as configurações responsaveis pelo orquestramento do docker exemplo:
+ {version: '20.10.23'   -- versao do seu docker-compose --v???
+  services:
+    app:
+        build: .
+        container_name: rentx
+        ports:
+            - 3333:3333
+        volumes:
+            - .:/usr/app}
+(depois disso necessario dar o up na raiz onde o docker composer estar para levantar)
+parar o docker ou na interface do windows ou com comando 
+-- docker stop (:nomedainstancia) da um ps e escreve as iniciais e da um tab
+>> (para executar o docker-compose é preciso estar na raiz onde o .yml esta criaado e dar o UP)
+--docker-compse up (vai rodar novamente o buil ja com as configurações do compose)  vai rodar
+
+********* Ativar o Reload ao salvar 
+Linux: Recomendado ter dois scripts de dev, para o windows com a flag e para os outros sistemas sem a flag poll. 
+Windows: O padrão utilizado para a comunicação de alteração de arquivos pelo ts-node-dev é o websocket, 
+porém no Windows com o Docker essa comunicação acaba não funcionando, você precisará utilizar outra
+forma que é a de Long Polling utilizando a flag --poll no seu script de dev no package.json. 
+    >>>>>> (--poll) Long Polling utilizando a flag --poll no seu script de dev no package.json
+"dev": "ts-node-dev (--poll) --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
+
+
+----------------------------------------------------------------------------------------------------
+
+
+para ver se ta rodando tenta levantar da porta local yarn dev ou usar o comando:
+ --docker exec -it :nomedoconainer /bin/bash
+ --ls
+
+
+//Quando um contêiner é executado e depois imediatamente interrompido, geralmente indica que algo deu 
+errado durante a inicialização do contêiner. Para descobrir o motivo pelo qual o contêiner está sendo 
+encerrado imediatamente, você pode executar o seguinte comando para ver o registro de eventos do contêiner:
+docker logs <container_id>
