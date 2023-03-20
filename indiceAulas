@@ -1,0 +1,22 @@
+------------------https://app.rocketseat.com.br/node/continuando-a-aplicacao/group/trabalhando-com-banco-de-dados-2/lesson/conhecendo-as-formas-de-usar-o-banco-de-dados
+AULA DE BANCO DE DANCO DE DADOS
+☐ conhecendo as formas de usar o banco de dados
+    trabalhar com driver nativo (dependencia do driver) ** eu prefiro
+    ou query builder (knext.js) 
+    knext um pouco mais flexivel pois nao depende diretamente dos drivers
+    ORMs typeorm (object relation map)
+    Model <-> ORM <-> banco de dados  (transforma no objeto) 
+        exemplo sequelize ou typeOrm
+☐ typeORM
+☐ 
+☐ 
+☐ 
+☐ 
+☐ 
+☐ 
+☐ 
+☐ 
+☐ 
+☐ 
+☐ 
+☐ 

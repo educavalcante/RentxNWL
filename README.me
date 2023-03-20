@@ -45,8 +45,8 @@ COMANDOS
 2 - remover container docker :IdContainer? rm (tem que estar com o docker parado)
 3 - Iniciar/parar docker :IdContainer? start ou stop 
 4 - acessar uma pasta de arquivos do container >>> docker exec -it :IdContainer? /bin/bash 
-(vai aparecer no terminal o caminho e diretorio root@)IdContainer?:/usr/ap#)
-5-
+(vai aparecer no terminal o caminho e diretorio root@)IdContainer?:/usr/ap#) control+D volta a aplicacao
+5- Logs docker logs :nomeDaImagem? -f  (-f fica sempre mostrando o log) control+C sistemas
 -------------------------------------------------------------------------------------------------------
 para ver se ta rodando tenta levantar da porta local yarn dev ou usar o comando:
  --docker exec -it :nomedoconainer /bin/bash
